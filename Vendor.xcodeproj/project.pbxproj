@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		2D6BCD8F2B264A0B0029F9AD /* VendorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6BCD8E2B264A0B0029F9AD /* VendorApp.swift */; };
-		2D6BCD912B264A0B0029F9AD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6BCD902B264A0B0029F9AD /* ContentView.swift */; };
 		2D6BCD932B264A0D0029F9AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D6BCD922B264A0D0029F9AD /* Assets.xcassets */; };
 		2D6BCD962B264A0D0029F9AD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D6BCD952B264A0D0029F9AD /* Preview Assets.xcassets */; };
 		2D6BCD9E2B264A2F0029F9AD /* Vendor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6BCD9D2B264A2F0029F9AD /* Vendor.swift */; };
@@ -16,6 +15,8 @@
 		2D6BCDA42B264BB90029F9AD /* VendorAPIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6BCDA32B264BB80029F9AD /* VendorAPIError.swift */; };
 		2D6BCDA72B264C2C0029F9AD /* VendorAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6BCDA62B264C2C0029F9AD /* VendorAPIService.swift */; };
 		2DD551B22B26558C00DEC199 /* vendors.json in Resources */ = {isa = PBXBuildFile; fileRef = 2DD551B12B26558C00DEC199 /* vendors.json */; };
+		2DD551B82B2657D500DEC199 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD551B72B2657D500DEC199 /* MainView.swift */; };
+		2DD551BA2B2657DD00DEC199 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD551B92B2657DD00DEC199 /* MainViewModel.swift */; };
 		2DD551BC2B2659B600DEC199 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD551BB2B2659B600DEC199 /* LoadingView.swift */; };
 		2DD551BE2B2659EA00DEC199 /* LoadingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD551BD2B2659EA00DEC199 /* LoadingState.swift */; };
 		2DD551C02B265AA100DEC199 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD551BF2B265AA100DEC199 /* Constants.swift */; };
@@ -24,7 +25,6 @@
 /* Begin PBXFileReference section */
 		2D6BCD8B2B264A0B0029F9AD /* Vendor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vendor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D6BCD8E2B264A0B0029F9AD /* VendorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VendorApp.swift; sourceTree = "<group>"; };
-		2D6BCD902B264A0B0029F9AD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		2D6BCD922B264A0D0029F9AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2D6BCD952B264A0D0029F9AD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2D6BCD9D2B264A2F0029F9AD /* Vendor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vendor.swift; sourceTree = "<group>"; };
@@ -33,6 +33,8 @@
 		2D6BCDA62B264C2C0029F9AD /* VendorAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VendorAPIService.swift; sourceTree = "<group>"; };
 		2DD551B02B2653C900DEC199 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		2DD551B12B26558C00DEC199 /* vendors.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = vendors.json; sourceTree = "<group>"; };
+		2DD551B72B2657D500DEC199 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		2DD551B92B2657DD00DEC199 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		2DD551BB2B2659B600DEC199 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		2DD551BD2B2659EA00DEC199 /* LoadingState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingState.swift; sourceTree = "<group>"; };
 		2DD551BF2B265AA100DEC199 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -75,7 +77,6 @@
 				2D6BCDA52B264BD70029F9AD /* Services */,
 				2D6BCD9C2B264A230029F9AD /* Models */,
 				2D6BCD8E2B264A0B0029F9AD /* VendorApp.swift */,
-				2D6BCD902B264A0B0029F9AD /* ContentView.swift */,
 				2D6BCD922B264A0D0029F9AD /* Assets.xcassets */,
 				2D6BCD942B264A0D0029F9AD /* Preview Content */,
 			);
@@ -116,6 +117,23 @@
 				2DD551BF2B265AA100DEC199 /* Constants.swift */,
 			);
 			path = CommonFiles;
+			sourceTree = "<group>";
+		};
+		2DD551B32B26577500DEC199 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2DD551B72B2657D500DEC199 /* MainView.swift */,
+				2DD551BB2B2659B600DEC199 /* LoadingView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2DD551B42B26578000DEC199 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				2DD551B92B2657DD00DEC199 /* MainViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -190,12 +208,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D6BCDA72B264C2C0029F9AD /* VendorAPIService.swift in Sources */,
+				2DD551B82B2657D500DEC199 /* MainView.swift in Sources */,
 				2D6BCD9E2B264A2F0029F9AD /* Vendor.swift in Sources */,
 				2DD551BC2B2659B600DEC199 /* LoadingView.swift in Sources */,
 				2D6BCDA42B264BB90029F9AD /* VendorAPIError.swift in Sources */,
 				2D6BCDA22B264A9A0029F9AD /* JSONData.swift in Sources */,
-				2D6BCD912B264A0B0029F9AD /* ContentView.swift in Sources */,
 				2D6BCD8F2B264A0B0029F9AD /* VendorApp.swift in Sources */,
+				2DD551BA2B2657DD00DEC199 /* MainViewModel.swift in Sources */,
 				2DD551BE2B2659EA00DEC199 /* LoadingState.swift in Sources */,
 				2DD551C02B265AA100DEC199 /* Constants.swift in Sources */,
 			);
