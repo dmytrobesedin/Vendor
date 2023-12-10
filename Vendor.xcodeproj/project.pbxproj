@@ -14,6 +14,11 @@
 		2D6BCD9E2B264A2F0029F9AD /* Vendor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6BCD9D2B264A2F0029F9AD /* Vendor.swift */; };
 		2D6BCDA22B264A9A0029F9AD /* JSONData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6BCDA12B264A9A0029F9AD /* JSONData.swift */; };
 		2D6BCDA42B264BB90029F9AD /* VendorAPIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6BCDA32B264BB80029F9AD /* VendorAPIError.swift */; };
+		2D6BCDA72B264C2C0029F9AD /* VendorAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6BCDA62B264C2C0029F9AD /* VendorAPIService.swift */; };
+		2DD551B22B26558C00DEC199 /* vendors.json in Resources */ = {isa = PBXBuildFile; fileRef = 2DD551B12B26558C00DEC199 /* vendors.json */; };
+		2DD551BC2B2659B600DEC199 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD551BB2B2659B600DEC199 /* LoadingView.swift */; };
+		2DD551BE2B2659EA00DEC199 /* LoadingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD551BD2B2659EA00DEC199 /* LoadingState.swift */; };
+		2DD551C02B265AA100DEC199 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD551BF2B265AA100DEC199 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +30,12 @@
 		2D6BCD9D2B264A2F0029F9AD /* Vendor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vendor.swift; sourceTree = "<group>"; };
 		2D6BCDA12B264A9A0029F9AD /* JSONData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONData.swift; sourceTree = "<group>"; };
 		2D6BCDA32B264BB80029F9AD /* VendorAPIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VendorAPIError.swift; sourceTree = "<group>"; };
+		2D6BCDA62B264C2C0029F9AD /* VendorAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VendorAPIService.swift; sourceTree = "<group>"; };
+		2DD551B02B2653C900DEC199 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		2DD551B12B26558C00DEC199 /* vendors.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = vendors.json; sourceTree = "<group>"; };
+		2DD551BB2B2659B600DEC199 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		2DD551BD2B2659EA00DEC199 /* LoadingState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingState.swift; sourceTree = "<group>"; };
+		2DD551BF2B265AA100DEC199 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +68,10 @@
 		2D6BCD8D2B264A0B0029F9AD /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				2DD551B42B26578000DEC199 /* ViewModels */,
+				2DD551B32B26577500DEC199 /* Views */,
+				2DD551B02B2653C900DEC199 /* Info.plist */,
+				2DD551AD2B264EFA00DEC199 /* CommonFiles */,
 				2D6BCDA52B264BD70029F9AD /* Services */,
 				2D6BCD9C2B264A230029F9AD /* Models */,
 				2D6BCD8E2B264A0B0029F9AD /* VendorApp.swift */,
@@ -81,6 +96,7 @@
 				2D6BCD9D2B264A2F0029F9AD /* Vendor.swift */,
 				2D6BCDA12B264A9A0029F9AD /* JSONData.swift */,
 				2D6BCDA32B264BB80029F9AD /* VendorAPIError.swift */,
+				2DD551BD2B2659EA00DEC199 /* LoadingState.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -88,8 +104,18 @@
 		2D6BCDA52B264BD70029F9AD /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				2D6BCDA62B264C2C0029F9AD /* VendorAPIService.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		2DD551AD2B264EFA00DEC199 /* CommonFiles */ = {
+			isa = PBXGroup;
+			children = (
+				2DD551B12B26558C00DEC199 /* vendors.json */,
+				2DD551BF2B265AA100DEC199 /* Constants.swift */,
+			);
+			path = CommonFiles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -152,6 +178,7 @@
 			files = (
 				2D6BCD962B264A0D0029F9AD /* Preview Assets.xcassets in Resources */,
 				2D6BCD932B264A0D0029F9AD /* Assets.xcassets in Resources */,
+				2DD551B22B26558C00DEC199 /* vendors.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -162,11 +189,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D6BCDA72B264C2C0029F9AD /* VendorAPIService.swift in Sources */,
 				2D6BCD9E2B264A2F0029F9AD /* Vendor.swift in Sources */,
+				2DD551BC2B2659B600DEC199 /* LoadingView.swift in Sources */,
 				2D6BCDA42B264BB90029F9AD /* VendorAPIError.swift in Sources */,
 				2D6BCDA22B264A9A0029F9AD /* JSONData.swift in Sources */,
 				2D6BCD912B264A0B0029F9AD /* ContentView.swift in Sources */,
 				2D6BCD8F2B264A0B0029F9AD /* VendorApp.swift in Sources */,
+				2DD551BE2B2659EA00DEC199 /* LoadingState.swift in Sources */,
+				2DD551C02B265AA100DEC199 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,7 +329,7 @@
 				DEVELOPMENT_TEAM = R963BP426U;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = Vendor/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -310,9 +341,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = DB.Vendor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -327,7 +361,7 @@
 				DEVELOPMENT_TEAM = R963BP426U;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = Vendor/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -339,9 +373,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = DB.Vendor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
