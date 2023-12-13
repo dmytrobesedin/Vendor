@@ -11,19 +11,15 @@ final class CategoryItemViewModel: ObservableObject {
     private(set) var category: Category
     private var numberOfRow = 2
 
-
     init(_ category: Category) {
         self.category = category
     }
 
-    var numberOfRows: Int {
-        return (genres.count + numberOfGenrePerRow - 1) / numberOfGenrePerRow
-    }
-
     // MARK: - Properties
-    var categoryMediaURL: URL? {
-        guard let url = URL(string: category.image.mediaURL) else {
-            return nil
+    var categoryMediaURL: URL {
+        let urlString = category.image.mediaURL.replacingOccurrences(of: " ", with: "%20")
+        guard let url = URL(string: urlString) else {
+            return URL.init(fileURLWithPath: "")
         }
         return url
     }

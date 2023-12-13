@@ -8,45 +8,23 @@
 import SwiftUI
 
 struct CategoryItemView: View {
-    @StateObject var viewModel: CategoryViewModel
+    @StateObject var viewModel: CategoryItemViewModel
 
     init(category: Category) {
-        let viewModel = CategoryViewModel(category)
+        let viewModel = CategoryItemViewModel(category)
         self._viewModel = StateObject(wrappedValue: viewModel)
     }
 
     var body: some View {
-        HStack(spacing: 6) {
-            AsyncImage(url: viewModel.categoryMediaURL) { phase in
-                switch phase {
-                case .empty:
-                    RoundedRectangle(cornerRadius: 8)
-                        .stroke(Color.gray.opacity(0.25))
-                        .background(.white)
-                        .frame(width: 22,
-                               height: 22)
-                        .overlay(alignment: .center) {
-                            ProgressView()
-                                .frame(width: 11,
-                                       height: 11,
-                                       alignment: .center)
-                                .padding()
-                        }
-                case .failure:
-                    Image(systemName: Constants.questionMarkSquare)
-                        .font(.system(size: 22))
-                case .success(let categoryImage):
-                    categoryImage
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .font(.system(size: 22))
-                default:
-                    Image(systemName: Constants.questionMarkSquare)
-                        .font(.system(size: 22))
-                }
+        HStack(alignment: .center, spacing: 6) {
+            SVGImage(url: viewModel.categoryMediaURL)
 
-
-            Text(viewModel.category.name)
+                Text(viewModel.category.name)
+                    .font(.setOpenSans(size: 14))
+                    .foregroundColor(.greyPrimary)
+                    .multilineTextAlignment(.leading)
+                    .lineLimit(1)
+                    .fixedSize()
         }
     }
 }
@@ -54,9 +32,9 @@ struct CategoryItemView: View {
 struct CategoryView_Previews: PreviewProvider {
     static var previews: some View {
         CategoryItemView(category: Category(id: 0,
-                                        name: "",
-                                        image: .init(id: 0,
-                                                     mediaURL: "",
-                                                     mediaType: .image)))
+                                            name: "",
+                                            image: .init(id: 0,
+                                                         mediaURL: "",
+                                                         mediaType: .image)))
     }
 }

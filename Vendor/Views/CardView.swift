@@ -99,19 +99,21 @@ struct CardView: View {
         }
     }
 }
-//struct CardView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        CardView(vendor: Vendor(id: 0,
-//                                companyName: "",
-//                                areaServed: "",
-//                                shopType: "",
-//                                favorited: false,
-//                                follow: false,
-//                                businessType: "",
-//                                coverPhoto: .init(id: 0,
-//                                                  mediaURL: "",
-//                                                  mediaType: .image),
-//                                categories: [.init(id: 0, name: "", image:)],
-//                                tags: [Tag]))
-//    }
-//}
+
+struct CardView_Previews: PreviewProvider {
+    static var previews: some View {
+        CardView(vendor: Vendor(id: 0,
+                                companyName: "",
+                                areaServed: "",
+                                shopType: "",
+                                favorited: false,
+                                follow: false,
+                                businessType: "",
+                                coverPhoto: .init(id: 0,
+                                                  mediaURL: "",
+                                                  mediaType: .image),
+                                categories: [Category(id: 1, name: "",
+                                                      image: CoverPhoto(id: 1, mediaURL: "", mediaType: .image))],
+                                tags: [Tag(id: 1, name: "", purpose: "")]))
+    }
+}

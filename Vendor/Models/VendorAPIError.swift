@@ -7,6 +7,15 @@
 
 import Foundation
 
-enum VendorAPIError: Error {
+enum VendorAPIError: Error, LocalizedError {
     case invalidBundlePath
+
+    var errorDescription: String? {
+        switch self {
+        case .invalidBundlePath:
+            return NSLocalizedString(
+                "Invalid bundle path.",
+                comment: "Failed fetch data")
+        }
+    }
 }
