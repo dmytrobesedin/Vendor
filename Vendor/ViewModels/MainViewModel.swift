@@ -8,9 +8,10 @@
 import SwiftUI
 
 final class MainViewModel: ObservableObject {
+    @Published var showAlert = false
+    @Published var searchQuery = ""
     @Published private(set) var vendors = [Vendor]()
     @Published private(set) var state: LoadingState = .empty
-    @Published private(set) var showAlert = false
     @Published private(set) var alertTitle = ""
     @Published private(set) var alertMessage = ""
     private(set) var vendorAPIService = VendorAPIService.shared

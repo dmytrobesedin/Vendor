@@ -19,7 +19,7 @@ struct MainView: View {
             case .empty:
                 EmptyView()
             case .content:
-                vendors
+                content
             }
         }
         .onAppear {
@@ -33,27 +33,22 @@ struct MainView: View {
             )
         })
     }
-    
+
+    private var content: some View {
+        VStack(alignment: .leading, spacing: 24) {
+            SearchView(text: $viewModel.searchQuery)
+                .padding(.horizontal, 16)
+
+            vendors
+        }
+        .padding(.vertical, 24)
+        .padding(.horizontal, 16)
+    }
+
     private var vendors: some View {
         ScrollView {
             ForEach(viewModel.vendors, id: \.id) { vendor in
-                HStack {
-                    VStack(alignment: .leading, spacing: 5) {
-                        Text(vendor.companyName)
-                            .lineLimit(3)
-                            .multilineTextAlignment(.leading)
-                            .font(.system(size: 16, weight: .semibold))
-                            .foregroundColor(.black)
-                        
-                        Text(vendor.businessType)
-                            .multilineTextAlignment(.leading)
-                            .fixedSize(horizontal: false, vertical: true)
-                            .lineSpacing(3)
-                            .lineLimit(5)
-                            .font(.system(size: 14, weight: .regular))
-                            .foregroundColor(.black)
-                    }
-                }
+                CardView(vendor: vendor)
             }
         }
     }
