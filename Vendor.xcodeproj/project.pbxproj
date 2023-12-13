@@ -20,6 +20,15 @@
 		2DD551BC2B2659B600DEC199 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD551BB2B2659B600DEC199 /* LoadingView.swift */; };
 		2DD551BE2B2659EA00DEC199 /* LoadingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD551BD2B2659EA00DEC199 /* LoadingState.swift */; };
 		2DD551C02B265AA100DEC199 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD551BF2B265AA100DEC199 /* Constants.swift */; };
+		2DE0D50A2B2795000079AAED /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE0D5092B2795000079AAED /* SearchView.swift */; };
+		2DE3175D2B279A74006D2BFB /* TextFieldSearchImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE3175C2B279A74006D2BFB /* TextFieldSearchImage.swift */; };
+		2DE317602B279E27006D2BFB /* Color + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE3175F2B279E27006D2BFB /* Color + Extension.swift */; };
+		2DE317622B279EE4006D2BFB /* Font + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE317612B279EE4006D2BFB /* Font + Extension.swift */; };
+		2DE317642B27A679006D2BFB /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE317632B27A679006D2BFB /* CardView.swift */; };
+		2DE317662B27A6AA006D2BFB /* CardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE317652B27A6AA006D2BFB /* CardViewModel.swift */; };
+		2DE3176A2B27AAED006D2BFB /* CategoryItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE317692B27AAED006D2BFB /* CategoryItemView.swift */; };
+		2DE3176E2B27AB06006D2BFB /* CategoryItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE3176D2B27AB06006D2BFB /* CategoryItemViewModel.swift */; };
+		2DE317702B27BE82006D2BFB /* SVGImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE3176F2B27BE82006D2BFB /* SVGImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +47,15 @@
 		2DD551BB2B2659B600DEC199 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		2DD551BD2B2659EA00DEC199 /* LoadingState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingState.swift; sourceTree = "<group>"; };
 		2DD551BF2B265AA100DEC199 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		2DE0D5092B2795000079AAED /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		2DE3175C2B279A74006D2BFB /* TextFieldSearchImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldSearchImage.swift; sourceTree = "<group>"; };
+		2DE3175F2B279E27006D2BFB /* Color + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color + Extension.swift"; sourceTree = "<group>"; };
+		2DE317612B279EE4006D2BFB /* Font + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font + Extension.swift"; sourceTree = "<group>"; };
+		2DE317632B27A679006D2BFB /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		2DE317652B27A6AA006D2BFB /* CardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewModel.swift; sourceTree = "<group>"; };
+		2DE317692B27AAED006D2BFB /* CategoryItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryItemView.swift; sourceTree = "<group>"; };
+		2DE3176D2B27AB06006D2BFB /* CategoryItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryItemViewModel.swift; sourceTree = "<group>"; };
+		2DE3176F2B27BE82006D2BFB /* SVGImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SVGImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +88,7 @@
 		2D6BCD8D2B264A0B0029F9AD /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				2DE3175E2B279E10006D2BFB /* Extensions */,
 				2DD551B42B26578000DEC199 /* ViewModels */,
 				2DD551B32B26577500DEC199 /* Views */,
 				2DD551B02B2653C900DEC199 /* Info.plist */,
@@ -115,6 +134,8 @@
 			children = (
 				2DD551B12B26558C00DEC199 /* vendors.json */,
 				2DD551BF2B265AA100DEC199 /* Constants.swift */,
+				2DE3175C2B279A74006D2BFB /* TextFieldSearchImage.swift */,
+				2DE3176F2B27BE82006D2BFB /* SVGImage.swift */,
 			);
 			path = CommonFiles;
 			sourceTree = "<group>";
@@ -124,6 +145,9 @@
 			children = (
 				2DD551B72B2657D500DEC199 /* MainView.swift */,
 				2DD551BB2B2659B600DEC199 /* LoadingView.swift */,
+				2DE0D5092B2795000079AAED /* SearchView.swift */,
+				2DE317632B27A679006D2BFB /* CardView.swift */,
+				2DE317692B27AAED006D2BFB /* CategoryItemView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -132,8 +156,19 @@
 			isa = PBXGroup;
 			children = (
 				2DD551B92B2657DD00DEC199 /* MainViewModel.swift */,
+				2DE317652B27A6AA006D2BFB /* CardViewModel.swift */,
+				2DE3176D2B27AB06006D2BFB /* CategoryItemViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		2DE3175E2B279E10006D2BFB /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				2DE3175F2B279E27006D2BFB /* Color + Extension.swift */,
+				2DE317612B279EE4006D2BFB /* Font + Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -208,15 +243,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D6BCDA72B264C2C0029F9AD /* VendorAPIService.swift in Sources */,
+				2DE3176A2B27AAED006D2BFB /* CategoryItemView.swift in Sources */,
+				2DE317602B279E27006D2BFB /* Color + Extension.swift in Sources */,
 				2DD551B82B2657D500DEC199 /* MainView.swift in Sources */,
 				2D6BCD9E2B264A2F0029F9AD /* Vendor.swift in Sources */,
+				2DE317662B27A6AA006D2BFB /* CardViewModel.swift in Sources */,
+				2DE317642B27A679006D2BFB /* CardView.swift in Sources */,
 				2DD551BC2B2659B600DEC199 /* LoadingView.swift in Sources */,
+				2DE317702B27BE82006D2BFB /* SVGImage.swift in Sources */,
 				2D6BCDA42B264BB90029F9AD /* VendorAPIError.swift in Sources */,
+				2DE317622B279EE4006D2BFB /* Font + Extension.swift in Sources */,
+				2DE3175D2B279A74006D2BFB /* TextFieldSearchImage.swift in Sources */,
 				2D6BCDA22B264A9A0029F9AD /* JSONData.swift in Sources */,
 				2D6BCD8F2B264A0B0029F9AD /* VendorApp.swift in Sources */,
 				2DD551BA2B2657DD00DEC199 /* MainViewModel.swift in Sources */,
 				2DD551BE2B2659EA00DEC199 /* LoadingState.swift in Sources */,
 				2DD551C02B265AA100DEC199 /* Constants.swift in Sources */,
+				2DE3176E2B27AB06006D2BFB /* CategoryItemViewModel.swift in Sources */,
+				2DE0D50A2B2795000079AAED /* SearchView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
