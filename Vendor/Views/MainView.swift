@@ -22,8 +22,8 @@ struct MainView: View {
                 content
             }
         }
-        .onAppear {
-            viewModel.getVendors()
+        .task {
+            await viewModel.getVendors()
         }
         .alert(isPresented: $viewModel.showAlert, content: {
             Alert(
@@ -33,23 +33,38 @@ struct MainView: View {
             )
         })
     }
-
+    
     private var content: some View {
-        VStack(alignment: .leading, spacing: 24) {
-            SearchView(text: $viewModel.searchQuery)
-                .padding(.horizontal, 16)
-
-            vendors
+        ScrollView {
+            VStack(alignment: .leading, spacing: 24) {
+                SearchView(text: $viewModel.searchQuery)
+                    .padding(.horizontal, 16)
+                if viewModel.hasSearchResult {
+                    vendors
+                } else {
+                    noSearchResultView
+                }
+            }
         }
         .padding(.vertical, 24)
-        .padding(.horizontal, 16)
     }
-
+    
     private var vendors: some View {
         ScrollView {
-            ForEach(viewModel.vendors, id: \.id) { vendor in
+            ForEach(viewModel.isSearching ? viewModel.filteredVendors : viewModel.vendors, id: \.self) { vendor in
                 CardView(vendor: vendor)
             }
+        }
+    }
+    
+    private var noSearchResultView: some View {
+        ZStack(alignment: .center) {
+            NoSearchResultView()
+                .frame(width: 320, alignment: .center)
+                .padding(.vertical, 225)
+                .padding(.horizontal, 20)
+            
+            Spacer()
         }
     }
 }
