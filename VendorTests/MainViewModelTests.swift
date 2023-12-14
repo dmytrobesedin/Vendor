@@ -182,5 +182,3 @@ final class MainViewModelTests: XCTestCase {
         XCTAssertTrue(mockVendorAPIService.isFetchVendorsMethodCalled, "When resource and the type are vendors, json accordingly, the fetchVendors() should be called.")
     }
 }
-
-
