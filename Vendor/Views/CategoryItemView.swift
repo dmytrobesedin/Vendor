@@ -20,7 +20,7 @@ struct CategoryItemView: View {
             SVGImage(url: viewModel.categoryMediaURL)
 
                 Text(viewModel.category.name)
-                    .font(.setOpenSans(size: 14))
+                    .font(.setOpenSansRegular(size: 14))
                     .foregroundColor(.greyPrimary)
                     .multilineTextAlignment(.leading)
                     .lineLimit(1)

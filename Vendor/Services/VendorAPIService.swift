@@ -8,14 +8,15 @@
 import Foundation
 
 final class VendorAPIService: ObservableObject {
-    // MARK: - Constants
     static let shared = VendorAPIService()
     
+    @Published var vendors = [Vendor]()
+    
     // MARK: - Methods
-    func fetchVendors(completion: @escaping (Result<[Vendor], Error>) -> Void)  {
+    @MainActor
+    func fetchVendors() async throws {
         guard let path = Bundle.main.path(forResource: "vendors", ofType: "json") else {
-            completion(.failure(VendorAPIError.invalidBundlePath))
-            return
+            throw VendorAPIError.invalidBundlePath
         }
         
         let url = URL(fileURLWithPath: path)
@@ -23,10 +24,10 @@ final class VendorAPIService: ObservableObject {
         do {
             let data = try Data(contentsOf: url)
             let decodeData = try jsonDecoder.decode(VendorRespond.self, from: data)
-            completion(.success(decodeData.vendors))
+            vendors = decodeData.vendors
         }
-        catch (let error){
-            completion(.failure(error))
+        catch {
+            throw error
         }
     }
 }
