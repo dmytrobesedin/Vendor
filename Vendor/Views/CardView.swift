@@ -18,38 +18,27 @@ struct CardView: View {
     var body: some View {
         ZStack(alignment: .topTrailing) {
             VStack(alignment: .leading) {
-                vendorMediaImage
+                vendorImageView
 
                 VStack(alignment: .leading, spacing: 6) {
-                    Text("**\(viewModel.vendor.companyName)**")
-                        .font(.setOpenSans(size: 17))
+                    Text("\(viewModel.vendor.companyName)")
+                        .font(.setOpenSansBold(size: 17))
                         .foregroundColor(.greyPrimary)
 
                     categories
                 }
 
-                Text(viewModel.tagNames)
-                    .lineLimit(2)
-                    .multilineTextAlignment(.leading)
-                    .font(.setOpenSans(size: 14))
-                    .foregroundColor(.greySecondary)
+                tags
             }
             .padding(.vertical, 12)
             .padding(.horizontal, 16)
 
-            Button {
-                viewModel.isSaveActiveButton.toggle()
-            } label: {
-                Image(viewModel.isSaveActiveButton ? "save active" : "save inactive")
-            }
-            .padding(.top, 16)
-            .padding(.trailing, 16)
-
+            saveInactiveButton
         }
     }
 
-    private var vendorMediaImage: some View {
-
+    private var vendorImageView: some View {
+        ZStack(alignment: .bottomLeading) {
             AsyncImage(url: viewModel.vendorMediaURL) { phase in
                 switch phase {
                 case .empty:
@@ -80,6 +69,8 @@ struct CardView: View {
                 }
             }
 
+            placeTextView
+        }
     }
 
     private var categories: some View {
@@ -97,6 +88,36 @@ struct CardView: View {
                 }
             }
         }
+    }
+
+    private var tags: some View {
+        Text(viewModel.tagNames)
+            .lineLimit(2)
+            .multilineTextAlignment(.leading)
+            .font(.setOpenSansRegular(size: 14))
+            .foregroundColor(.greySecondary)
+    }
+
+    private var placeTextView: some View {
+        Text(viewModel.vendor.areaServed)
+            .font(.setOpenSansRegular(size: 14))
+            .foregroundColor(.greyPrimary)
+            .padding(.horizontal, 8)
+            .padding(.vertical, 4)
+            .background(.white)
+            .cornerRadius(16)
+            .padding(.bottom, 8)
+            .padding(.leading, 8)
+    }
+
+    private var saveInactiveButton: some View {
+        Button {
+            viewModel.saveInactiveAction()
+        } label: {
+            viewModel.saveInactiveButtonLabel
+        }
+        .padding(.top, 16)
+        .padding(.trailing, 10)
     }
 }
 
