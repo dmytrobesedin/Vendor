@@ -18,12 +18,13 @@ final class MainViewModel: ObservableObject {
     @Published private(set) var alertMessage = ""
     @Published private(set) var canSearching = false
     
-    private var vendorAPIService = VendorAPIService.shared
+    private(set) var vendorAPIService: VendorAPIServiceProtocol
     private var cancellables = Set<AnyCancellable>()
     
     // MARK: - Init
-    init() {
-        addSubsribers()
+    init(vendorAPIService: VendorAPIServiceProtocol = VendorAPIService.shared) {
+        self.vendorAPIService = vendorAPIService
+        addSubscribers()
     }
     
     var isSearching: Bool {
@@ -40,7 +41,7 @@ final class MainViewModel: ObservableObject {
         state = .loading
         
         do {
-            try await vendorAPIService.fetchVendors()
+            vendors = try await vendorAPIService.fetchVendors()
             state = .content
         } catch {
             showAlert(message: error.localizedDescription)
@@ -55,11 +56,7 @@ final class MainViewModel: ObservableObject {
     }
     
     // MARK: - Private methods
-    private func addSubsribers() {
-        vendorAPIService.$vendors
-            .assign(to: \.vendors, on: self)
-            .store(in: &cancellables)
-        
+    private func addSubscribers() {
         $searchQuery
             .map { search in
                 return search.count >= 3

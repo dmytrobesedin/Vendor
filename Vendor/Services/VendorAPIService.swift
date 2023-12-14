@@ -7,27 +7,40 @@
 
 import Foundation
 
-final class VendorAPIService: ObservableObject {
+protocol VendorAPIServiceProtocol {
+    func fetchVendors() async throws -> [Vendor]
+    func getBundlePath(forResource: String, ofType: String) throws -> String
+    func getData(_ path: String) throws -> Data
+}
+
+final class VendorAPIService: VendorAPIServiceProtocol {
+    // MARK: - Constants
     static let shared = VendorAPIService()
-    
-    @Published var vendors = [Vendor]()
-    
+
     // MARK: - Methods
     @MainActor
-    func fetchVendors() async throws {
-        guard let path = Bundle.main.path(forResource: "vendors", ofType: "json") else {
-            throw VendorAPIError.invalidBundlePath
-        }
-        
-        let url = URL(fileURLWithPath: path)
+    func fetchVendors() async throws -> [Vendor] {
         let jsonDecoder = JSONDecoder()
         do {
-            let data = try Data(contentsOf: url)
+            let path = try getBundlePath(forResource: "vendors", ofType: "json")
+            print("<<<", path)
+            let data = try getData(path)
             let decodeData = try jsonDecoder.decode(VendorRespond.self, from: data)
-            vendors = decodeData.vendors
+            return decodeData.vendors
         }
         catch {
             throw error
         }
+    }
+
+    func getBundlePath(forResource: String, ofType: String) throws -> String {
+        guard let path = Bundle.main.path(forResource: forResource, ofType: ofType) else {
+            throw VendorAPIError.invalidBundlePath
+        }
+        return path
+    }
+
+    func getData(_ path: String) throws -> Data {
+        return try Data(contentsOf: URL(filePath: path))
     }
 }
