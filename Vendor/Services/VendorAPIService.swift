@@ -23,7 +23,6 @@ final class VendorAPIService: VendorAPIServiceProtocol {
         let jsonDecoder = JSONDecoder()
         do {
             let path = try getBundlePath(forResource: "vendors", ofType: "json")
-            print("<<<", path)
             let data = try getData(path)
             let decodeData = try jsonDecoder.decode(VendorRespond.self, from: data)
             return decodeData.vendors
