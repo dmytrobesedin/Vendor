@@ -8,8 +8,13 @@
 import SwiftUI
 
 extension Font {
-    static func setOpenSans(size: CGFloat, weight: Weight = .regular) -> Font {
-        return Font.custom("Open Sans", size: size)
+    static func setOpenSansRegular(size: CGFloat, weight: Weight = .regular) -> Font {
+        return Font.custom("OpenSans-Regular", size: size)
+            .weight(weight)
+    }
+    
+    static func setOpenSansBold(size: CGFloat, weight: Weight = .bold) -> Font {
+        return Font.custom("OpenSans-Bold", size: size)
             .weight(weight)
     }
 }

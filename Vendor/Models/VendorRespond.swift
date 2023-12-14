@@ -1,5 +1,5 @@
 //
-//  Vendor.swift
+//  VendorRespond.swift
 //  Vendor
 //
 //  Created by Dmytro Besedin on 10.12.2023.
@@ -7,6 +7,7 @@
 
 import Foundation
 
+// MARK: - VendorRespond
 struct VendorRespond: Codable {
     let vendors: [Vendor]
 }
@@ -15,12 +16,13 @@ struct VendorRespond: Codable {
 struct Vendor: Codable {
     let id: Int
     let companyName, areaServed, shopType: String
-    let favorited, follow: Bool
+    var favorited: Bool
+    let follow: Bool
     let businessType: String
     let coverPhoto: CoverPhoto
     let categories: [Category]
     let tags: [Tag]
-
+    
     enum CodingKeys: String, CodingKey {
         case id
         case companyName = "company_name"
@@ -45,7 +47,7 @@ struct CoverPhoto: Codable {
     let id: Int
     let mediaURL: String
     let mediaType: MediaType
-
+    
     enum CodingKeys: String, CodingKey {
         case id
         case mediaURL = "media_url"
@@ -61,4 +63,14 @@ enum MediaType: String, Codable {
 struct Tag: Codable {
     let id: Int
     let name, purpose: String
+}
+
+// MARK: - Hashable
+extension Vendor: Hashable {
+    static func == (lhs: Vendor, rhs: Vendor) -> Bool {
+        return lhs.id == rhs.id
+    }
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
 }

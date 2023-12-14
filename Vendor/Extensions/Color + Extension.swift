@@ -16,6 +16,10 @@ extension Color {
         return Color(hex: "#575757")
     }
 
+    public static var darkGreen: Color {
+        return Color(hex: "#289460")
+    }
+    
     init(hex: String) {
         let hex = hex.trimmingCharacters(in: CharacterSet.alphanumerics.inverted)
         var int: UInt64 = 0
