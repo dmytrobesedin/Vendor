@@ -11,21 +11,28 @@ struct SearchView: View {
     @Binding var text: String
 
     var body: some View {
-        TextField("", text: $text, prompt: promtText)
-            .modifier(TextFieldSearchImage())
-            .multilineTextAlignment(.leading)
-            .frame(height: 48)
-            .background(Color.white)
-            .cornerRadius(16)
-            .shadow(color: .black.opacity(0.1),
-                    radius: 7, x: 0, y: 6)
+        HStack {
+            TextField("", text: $text, prompt: promtText)
+                .font(.setOpenSansRegular(size: 16))
+                .foregroundColor(.greySecondary)
+                .multilineTextAlignment(.leading)
+
+            Image(Constants.iconSearch)
+                .font(.system(size: 20))
+        }
+        .frame(height: 48)
+        .padding(.horizontal, 16)
+        .background(Color.white)
+        .cornerRadius(16)
+        .shadow(color: .black.opacity(0.1),
+                radius: 7, x: 0, y: 6)
 
     }
 
    private var promtText: Text {
         Text("Search...")
             .foregroundColor(.greySecondary)
-            .font(.setOpenSans(size: 16))
+            .font(.setOpenSansRegular(size: 16))
     }
 }
 

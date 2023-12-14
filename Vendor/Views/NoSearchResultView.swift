@@ -9,7 +9,19 @@ import SwiftUI
 
 struct NoSearchResultView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack(alignment: .center, spacing: 8) {
+            Text("Sorry! No results found...")
+                .font(.setOpenSansBold(size: 24))
+                .foregroundColor(.darkGreen)
+                .multilineTextAlignment(.center)
+            
+            Text("Please try a different search request\nor browse businesses from the list")
+                .font(.setOpenSansRegular(size: 16))
+                .foregroundColor(.greyPrimary)
+                .lineLimit(2)
+                .lineSpacing(4)
+                .multilineTextAlignment(.center)
+        }
     }
 }
 

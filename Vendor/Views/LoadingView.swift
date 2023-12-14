@@ -12,7 +12,7 @@ struct LoadingView: View {
         ZStack {
             VStack {
                 Text("Loading..")
-
+                
                 ProgressView()
                     .scaleEffect(1.5)
                     .padding(.top, 25)
