@@ -112,7 +112,6 @@ final class MainViewModelTests: XCTestCase {
         XCTAssertTrue(mockVendorAPIService.isGetDataMethodCalled, "When the bundle path is /Vendor.app/cars.json, the getData() should be called.")
     }
 
-
     func testFetchVendors_WithForResourceIsCarsAndOfTypeIsJson_shouldThrowInvalidBundlePathError() async {
         let expectation = expectation(description: "testFetchVendors")
         var thrownError: Error?
@@ -178,7 +177,17 @@ final class MainViewModelTests: XCTestCase {
 
         await waitForExpectations(timeout: 1)
 
-        XCTAssertEqual(resultVendors?.first?.companyName, "Florists + Fashion", "Expected get array with vendors")
+        XCTAssertEqual(resultVendors?.first?.companyName, "Florists + Fashion", "Expected vendor's company name is Florists + Fashion")
         XCTAssertTrue(mockVendorAPIService.isFetchVendorsMethodCalled, "When resource and the type are vendors, json accordingly, the fetchVendors() should be called.")
+    }
+
+    @MainActor
+    func testGetVendors_withSuccessResponse_shouldSaveDataInVendors() async {
+        mockVendorAPIService.forResource = "vendors"
+        mockVendorAPIService.ofType = "json"
+
+        await sut.getVendors()
+
+        XCTAssertEqual(sut.vendors.first?.shopType, "Bike Shop", "Expected vendor's shop area is Bike Shop")
     }
 }
