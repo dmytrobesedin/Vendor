@@ -24,6 +24,7 @@ struct CardView: View {
                     Text("\(viewModel.vendor.companyName)")
                         .font(.setOpenSansBold(size: 17))
                         .foregroundColor(.greyPrimary)
+                        .lineLimit(1)
 
                     categories
                 }
@@ -102,6 +103,7 @@ struct CardView: View {
         Text(viewModel.vendor.areaServed)
             .font(.setOpenSansRegular(size: 14))
             .foregroundColor(.greyPrimary)
+            .lineLimit(1)
             .padding(.horizontal, 8)
             .padding(.vertical, 4)
             .background(.white)

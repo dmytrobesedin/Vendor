@@ -13,6 +13,7 @@ struct NoSearchResultView: View {
             Text("Sorry! No results found...")
                 .font(.setOpenSansBold(size: 24))
                 .foregroundColor(.darkGreen)
+                .lineLimit(1)
                 .multilineTextAlignment(.center)
             
             Text("Please try a different search request\nor browse businesses from the list")
